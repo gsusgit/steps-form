@@ -1,0 +1,52 @@
+@import './../../../assets/colors.scss';
+
+.step-content-label {
+    margin-bottom: 16px;
+}
+
+.step-complete-btn {
+    padding: 10px 20px 10px 10px;
+    border-radius: 50px;
+    border: none !important;
+    background: #c9e6ff;
+    display: flex;
+    align-items: center;
+}
+
+.completed-step-check {
+    margin-right: 12px;
+    color: $blue !important;
+}
+
+.ms-2 {
+  margin-top: -0.75rem !important;
+}
+
+.form-control {
+  padding: 0.575rem 0.75rem;
+  border: 2px solid #9fbbd3;
+  border-radius: 20px;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #FFFFFF;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+  background-repeat: no-repeat;
+  background-position-x: 96%;
+  background-position-y: 0.7em;
+  border: 1px solid #3a3e4742;
+}
+
+
+.was-validated select.form-control:invalid, select.form-control.is-invalid, .was-validated select.form-control:valid, select.form-control.is-valid {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>') !important;
+  background-color: transparent !important;
+}
+
+.was-validated .form-control:invalid, .form-control.is-invalid, .was-validated .form-control:valid, .form-control.is-valid {
+  background-image: none !important;
+  background-color: transparent !important;
+}

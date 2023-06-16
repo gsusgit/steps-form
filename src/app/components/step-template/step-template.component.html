@@ -1,0 +1,109 @@
+<div class="step-template">
+  <h2 class="mt-3">{{ step.name }}</h2>
+  <form *ngIf="currentIndex === 1" class="needs-validation" [formGroup]="step1Form" novalidate>
+    <div class="row mt-4">
+      <div class="col-md-4 mb-2">
+        <div class="form-group">
+          <label for="name" class="ms-2 position-absolute">
+            <span class="h6 small bg-white text-muted px-1">Nombre &#x2a;</span>
+          </label>
+          <input class="form-control mt-2" type="text" id="name" formControlName="name" required
+                 [ngClass]="{'is-valid': !form1.name.errors && form1.name.touched,'is-invalid': form1.name.errors && form1.name.touched}"/>
+        </div>
+      </div>
+      <div class="col-md-4 mb-2">
+        <div class="form-group">
+          <label for="lastname1" class="ms-2 position-absolute">
+            <span class="h6 small bg-white text-muted px-1">Apellido 1 &#x2a;</span>
+          </label>
+          <input class="form-control mt-2" type="text" id="lastname1" formControlName="lastname1" required
+                 [ngClass]="{'is-valid': !form1.lastname1.errors && form1.lastname1.touched,'is-invalid': form1.lastname1.errors && form1.lastname1.touched}"/>
+        </div>
+      </div>
+      <div class="col-md-4 mb-2">
+        <div class="form-group">
+          <label for="lastname2" class="ms-2 position-absolute">
+            <span class="h6 small bg-white text-muted px-1">Apellido 2</span>
+          </label>
+          <input class="form-control mt-2" type="text" id="lastname2" formControlName="lastname2"/>
+        </div>
+      </div>
+      <div class="col-md-4 mb-2 mt-5">
+        <button class="step-complete-btn" (click)="onCompleteStep(step1Form)">
+          <span class="completed-step-check material-icons">
+              {{ step.isComplete ? 'check_circle' : 'panorama_fish_eye' }}
+          </span>Siguiente</button>
+      </div>
+    </div>
+  </form>
+  <form *ngIf="currentIndex === 2" class="needs-validation" [formGroup]="step2Form" novalidate>
+    <div class="row mt-4">
+      <div class="col-md-4 mb-2">
+        <div class="form-group">
+          <label for="email" class="ms-2 position-absolute">
+            <span class="h6 small bg-white text-muted px-1">Email &#x2a;</span>
+          </label>
+          <input class="form-control mt-2" type="email" id="email" formControlName="email" required
+                 [ngClass]="{'is-valid': !form2.email.errors && form2.email.touched,'is-invalid': form2.email.errors && form2.email.touched}"/>
+        </div>
+      </div>
+      <div class="col-md-4 mb-2">
+        <div class="form-group">
+          <label for="phone1" class="ms-2 position-absolute">
+            <span class="h6 small bg-white text-muted px-1">Teléfono principal &#x2a;</span>
+          </label>
+          <input class="form-control mt-2" type="text" id="phone1" formControlName="phone1" required
+                 [ngClass]="{'is-valid': !form2.phone1.errors && form2.phone1.touched,'is-invalid': form2.phone1.errors && form2.phone1.touched}"/>
+        </div>
+      </div>
+      <div class="col-md-4 mb-2">
+        <div class="form-group">
+          <label for="phone2" class="ms-2 position-absolute">
+            <span class="h6 small bg-white text-muted px-1">Otro teléfono</span>
+          </label>
+          <input class="form-control mt-2" type="text" id="phone2" formControlName="phone2"/>
+        </div>
+      </div>
+      <div class="col-md-4 mb-2 mt-5">
+        <button class="step-complete-btn" (click)="onCompleteStep(step2Form)">
+          <span class="completed-step-check material-icons">
+              {{ step.isComplete ? 'check_circle' : 'panorama_fish_eye' }}
+          </span>Siguiente</button>
+      </div>
+    </div>
+  </form>
+  <form *ngIf="currentIndex === 3" class="needs-validation" [formGroup]="step3Form" novalidate>
+    <div class="row mt-4">
+      <div class="col-md-4 mb-2">
+        <div class="form-group">
+          <label for="company" class="ms-2 position-absolute">
+            <span class="h6 small bg-white text-muted px-1">Anterior compañía</span>
+          </label>
+          <select class="form-control mt-2" formControlName="company" id="company">
+            <option value="" disabled selected>Seleccionar</option>
+            <option *ngFor="let broker of brokers" [value]="broker.name">{{broker.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4 mb-2">
+        <div class="form-group">
+          <label for="type" class="ms-2 position-absolute">
+            <span class="h6 small bg-white text-muted px-1">Tipo de seguro &#x2a;</span>
+          </label>
+          <select class="form-control mt-2" formControlName="type" id="type" required
+                  [ngClass]="{'is-valid': !form3.type.errors && form3.type.touched,
+                  'is-invalid': form3.type.errors && form3.type.touched}">
+            <option value="" disabled selected>Seleccionar</option>
+            <option *ngFor="let insurance of insurances" [value]="insurance.name">{{insurance.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4 mb-2 mt-5">
+        <button class="step-complete-btn" (click)="onCompleteStep(step3Form)">
+          <span class="completed-step-check material-icons">
+              {{ step.isComplete ? 'check_circle' : 'panorama_fish_eye' }}
+          </span>Enviar</button>
+      </div>
+    </div>
+  </form>
+</div>
